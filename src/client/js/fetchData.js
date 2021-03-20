@@ -1,4 +1,4 @@
-function fetchData(url) {
+function fetchData(url, formText) {
   fetch(url)
     .then((res) => res.json())
     .then(function (res) {

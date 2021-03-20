@@ -11,7 +11,7 @@ function handleSubmit(event) {
 
   const apiKeyUrl = "http://localhost:8081/key";
 
-  Client.fetchData(apiKeyUrl);
+  Client.fetchData(apiKeyUrl, formText);
 }
 
 export { handleSubmit };
