@@ -5,11 +5,12 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/client/index.js",
-  output: {
-    libraryTarget: "var",
-    library: "Client",
-  },
   mode: "development",
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    injectClient: false,
+  },
   devtool: "source-map",
   stats: "verbose",
   module: {
@@ -40,4 +41,9 @@ module.exports = {
       protectWebpackAssets: false,
     }),
   ],
+  output: {
+    libraryTarget: "var",
+    library: "Client",
+    path: path.resolve(__dirname, "dist"),
+  },
 };
